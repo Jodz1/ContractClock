@@ -1,0 +1,38 @@
+RECKA - MySQL / Workbench objašnjenje
+
+Bitno:
+- MySQL Workbench NIJE baza. Workbench je samo program za gledanje baze.
+- Aplikaciji treba pokrenut MySQL Server servis.
+- Workbench moze biti zatvoren, ali MySQL Server mora da radi.
+
+Ako dobijes poruku da nema Workbench-a ili da nema konekcije:
+
+1) Proveri da li radi MySQL Server
+   Windows Start -> Services -> nadji MySQL80 ili MySQL -> Start
+
+2) Proveri username/password u:
+   src/main/resources/application.properties
+
+   Default je:
+   db.username=root
+   db.password=password
+
+   Ako ti je root password prazan, stavi:
+   db.password=
+
+3) Ova verzija aplikacije ima auto setup baze:
+   db.autoInitialize=true
+
+   To znaci: ako MySQL Server radi i username/password su tacni,
+   aplikacija sama kreira:
+   - bazu time_tracker_db
+   - sve tabele
+   - seed podatke
+
+4) Ako pokreces iz IntelliJ-a:
+   - Project SDK: Java 21 je preporuka
+   - Run main class: com.recka.Launcher
+   - ili Maven panel -> Plugins -> javafx -> javafx:run
+
+5) Java 25 warning poruke nisu fatalne.
+   Najbolje koristi Java 21 jer je projekat napravljen za Java 21 + JavaFX 21.

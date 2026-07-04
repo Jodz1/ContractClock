@@ -1,0 +1,25 @@
+Ako vidiš grešku:
+
+Error: JavaFX runtime components are missing, and are required to run this application
+
+Razlog: aplikacija je pokrenuta kao običan jar bez JavaFX modula.
+
+Rešenje:
+1. Otvori folder projekta Recka.
+2. Pokreni:
+
+   mvn clean javafx:run
+
+   ili na Windows-u dupli klik na:
+
+   run-windows.bat
+
+Alternativa:
+
+   mvn clean compile exec:java
+
+Nemoj koristiti:
+
+   java -jar target/recka-1.0.0.jar
+
+jer taj jar sam po sebi ne nosi JavaFX runtime.
